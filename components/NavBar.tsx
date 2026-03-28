@@ -30,6 +30,9 @@ export default function NavBar() {
         <Link href="/backend-demo" className="hover:text-gray-300">
           Backend
         </Link>
+        <Link href="/global-state-demo" className="hover:text-gray-300">
+          Global State
+        </Link>
         <Link href="/about" className="hover:text-gray-300">
           About
         </Link>
