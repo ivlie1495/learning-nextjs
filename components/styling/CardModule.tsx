@@ -1,5 +1,5 @@
 // 2. CSS Modules - scoped styles via .module.css
-import styles from '@/components/CardModule.module.css'
+import styles from '@/components/styling/CardModule.module.css'
 
 export default function CardModule() {
   return (

@@ -1,7 +1,7 @@
-import CardVanilla from '@/components/CardVanilla'
-import CardModule from '@/components/CardModule'
-import CardInline from '@/components/CardInline'
-import CardCSSinJS from '@/components/CardCSSinJS'
+import CardVanilla from '@/components/styling/CardVanilla'
+import CardModule from '@/components/styling/CardModule'
+import CardInline from '@/components/styling/CardInline'
+import CardCSSinJS from '@/components/styling/CardCSSinJS'
 
 // Styling demo page - same Card component styled 4 ways
 export default function StylingDemoPage() {

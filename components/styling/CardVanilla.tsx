@@ -1,5 +1,5 @@
 // 1. Vanilla CSS - import a separate CSS file
-import '@/components/CardVanilla.css'
+import '@/components/styling/CardVanilla.css'
 
 export default function CardVanilla() {
   return (
