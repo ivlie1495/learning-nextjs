@@ -27,6 +27,9 @@ export default function NavBar() {
         <Link href="/forms-demo" className="hover:text-gray-300">
           Forms
         </Link>
+        <Link href="/backend-demo" className="hover:text-gray-300">
+          Backend
+        </Link>
         <Link href="/about" className="hover:text-gray-300">
           About
         </Link>
