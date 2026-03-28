@@ -15,6 +15,12 @@ export default function NavBar() {
         <Link href="/products" className="hover:text-gray-300">
           Products
         </Link>
+        <Link href="/components-demo" className="hover:text-gray-300">
+          Components
+        </Link>
+        <Link href="/styling-demo" className="hover:text-gray-300">
+          Styling
+        </Link>
         <Link href="/about" className="hover:text-gray-300">
           About
         </Link>
