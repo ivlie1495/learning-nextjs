@@ -33,6 +33,12 @@ export default function NavBar() {
         <Link href="/global-state-demo" className="hover:text-gray-300">
           Global State
         </Link>
+        <Link href="/blog" className="hover:text-gray-300">
+          Blog
+        </Link>
+        <Link href="/dashboard" className="hover:text-gray-300">
+          Dashboard
+        </Link>
         <Link href="/about" className="hover:text-gray-300">
           About
         </Link>
