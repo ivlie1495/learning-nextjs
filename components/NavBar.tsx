@@ -21,6 +21,12 @@ export default function NavBar() {
         <Link href="/styling-demo" className="hover:text-gray-300">
           Styling
         </Link>
+        <Link href="/state-demo" className="hover:text-gray-300">
+          State
+        </Link>
+        <Link href="/forms-demo" className="hover:text-gray-300">
+          Forms
+        </Link>
         <Link href="/about" className="hover:text-gray-300">
           About
         </Link>
