@@ -36,6 +36,9 @@ export default function NavBar() {
         <Link href="/api-demo" className="hover:text-gray-300">
           API
         </Link>
+        <Link href="/auth-demo" className="hover:text-gray-300">
+          Auth
+        </Link>
         <Link href="/blog" className="hover:text-gray-300">
           Blog
         </Link>
