@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Learning Next.js
+
+A hands-on project for learning Next.js fundamentals, built lesson by lesson. Each branch covers a specific topic with working demo pages.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
+npx prisma migrate dev
+npx prisma generate
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the homepage with links to all demos.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Lessons
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Lesson 1-2: Components & Styling
+Building reusable components with props, children, lists, and conditional rendering. Covers different styling approaches: vanilla CSS, CSS Modules, inline styles, and CSS-in-JS.
 
-## Learn More
+### Lesson 3: Managing State & Building Forms
+Using `useState` for local state, filtering lists, and updating objects/arrays. Building forms with React Hook Form and Zod schema validation.
 
-To learn more about Next.js, take a look at the following resources:
+### Lesson 4: Connecting to the Backend
+Data fetching with `useEffect`, Axios with a service layer, custom `useFetch` hook, and React Query for caching and loading states.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Lesson 5: Global State Management
+Sharing state across components using React Context, `useReducer` for complex state logic, and Zustand as a lightweight store.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Lesson 6: Routing & Navigation
+File-based routing with the App Router, dynamic routes (`[id]`), nested layouts, catch-all segments (`[[...slug]]`), loading/error states, and not-found pages.
 
-## Deploy on Vercel
+### Lesson 7: API Routes
+Server-side API endpoints inside `/app/api/`. Full CRUD with Prisma (SQLite), Zod request validation, and dynamic route params.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Lesson 8: Authentication
+JWT-based auth with login/logout API routes, httpOnly cookies, middleware for route protection, and a `/api/auth/me` endpoint to get the current user.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Tech Stack
+
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS
+- Prisma (SQLite)
+- Zod
+- React Query
+- Zustand
