@@ -33,6 +33,9 @@ export default function NavBar() {
         <Link href="/global-state-demo" className="hover:text-gray-300">
           Global State
         </Link>
+        <Link href="/api-demo" className="hover:text-gray-300">
+          API
+        </Link>
         <Link href="/blog" className="hover:text-gray-300">
           Blog
         </Link>
