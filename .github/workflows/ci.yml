@@ -31,19 +31,19 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        env:
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-          SSH_USER: ${{ secrets.SSH_USER }}
-          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
-          echo "$SSH_KEY" > /tmp/deploy_key
-          chmod 600 /tmp/deploy_key
-          ssh -i /tmp/deploy_key -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "
-            cd /var/www/learning-nextjs &&
-            git pull origin main &&
-            npm ci &&
-            npm run build &&
-            pm2 restart learning-nextjs
-          "
+      # - name: Deploy
+      #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      #   env:
+      #     SSH_HOST: ${{ secrets.SSH_HOST }}
+      #     SSH_USER: ${{ secrets.SSH_USER }}
+      #     SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      #   run: |
+      #     echo "$SSH_KEY" > /tmp/deploy_key
+      #     chmod 600 /tmp/deploy_key
+      #     ssh -i /tmp/deploy_key -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "
+      #       cd /var/www/learning-nextjs &&
+      #       git pull origin main &&
+      #       npm ci &&
+      #       npm run build &&
+      #       pm2 restart learning-nextjs
+      #     "
