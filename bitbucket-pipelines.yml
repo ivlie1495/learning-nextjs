@@ -1,0 +1,64 @@
+image: node:22
+
+definitions:
+  caches:
+    npm: ~/.npm
+
+  steps:
+    - step: &install
+        name: Install dependencies
+        caches:
+          - npm
+        script:
+          - npm ci
+        artifacts:
+          - node_modules/**
+
+    - step: &lint
+        name: Lint
+        script:
+          - npm run lint
+
+    - step: &test
+        name: Test
+        script:
+          - npm run test -- --run
+
+    - step: &build
+        name: Build
+        script:
+          - npm run build
+
+    - step: &deploy
+        name: Deploy
+        deployment: production
+        script:
+          - pipe: atlassian/ssh-run:0.4.1
+            variables:
+              SSH_USER: $SSH_USER
+              SERVER: $SSH_HOST
+              SSH_KEY: $SSH_PRIVATE_KEY
+              COMMAND: >
+                cd /var/www/learning-nextjs &&
+                git pull origin main &&
+                npm ci &&
+                npm run build &&
+                pm2 restart learning-nextjs
+
+pipelines:
+  pull-requests:
+    '**':
+      - step: *install
+      - parallel:
+          - step: *lint
+          - step: *test
+      - step: *build
+
+  branches:
+    main:
+      - step: *install
+      - parallel:
+          - step: *lint
+          - step: *test
+      - step: *build
+      - step: *deploy

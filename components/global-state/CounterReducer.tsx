@@ -24,6 +24,7 @@ function reducer(state: State, action: Action): State {
 
 export default function CounterReducer() {
   const [state, dispatch] = useReducer(reducer, { count: 0 })
+  console.log(process.env.NEXT_PUBLIC_API_KEY, process.env.DATABESE_URL)
 
   return (
     <div className="flex items-center gap-3">

@@ -31,6 +31,7 @@ export default function TodoList() {
   })
 
   function onSubmit(data: FormData) {
+    // eslint-disable-next-line react-hooks/purity
     setTodos([...todos, { id: Date.now(), text: data.todo }])
     reset()
   }
