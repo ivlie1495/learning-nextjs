@@ -71,7 +71,7 @@ export default function LoginForm() {
         {loading ? 'Logging in...' : 'Login'}
       </button>
       <p className="text-xs text-gray-400">
-        Demo: use any user email from /api-demo with password &quot;password&quot;
+        Demo users: alice@example.com or bob@example.com — password is &quot;password&quot;
       </p>
     </form>
   )

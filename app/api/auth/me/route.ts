@@ -1,7 +1,11 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { verifyToken } from '@/lib/auth'
-import { prisma } from '@/lib/prisma'
+
+const DEMO_USERS = [
+  { id: 1, name: 'Alice', email: 'alice@example.com', createdAt: '2024-01-01T00:00:00.000Z' },
+  { id: 2, name: 'Bob', email: 'bob@example.com', createdAt: '2024-01-01T00:00:00.000Z' },
+]
 
 export async function GET() {
   const cookieStore = await cookies()
@@ -16,10 +20,7 @@ export async function GET() {
 
   try {
     const payload = await verifyToken(token)
-    const user = await prisma.user.findUnique({
-      where: { id: payload.id },
-      select: { id: true, name: true, email: true, createdAt: true },
-    })
+    const user = DEMO_USERS.find((u) => u.id === payload.id)
 
     if (!user) {
       return NextResponse.json(
