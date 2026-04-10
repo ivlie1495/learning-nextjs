@@ -9,7 +9,7 @@ export default function NavAuthStatus() {
   const [loading, setLoading] = useState(true)
   const router = useRouter()
 
-  useEffect(() => {
+  const fetchAuth = () => {
     fetch('/api/auth/me')
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
@@ -17,6 +17,12 @@ export default function NavAuthStatus() {
         setLoading(false)
       })
       .catch(() => setLoading(false))
+  }
+
+  useEffect(() => {
+    fetchAuth()
+    window.addEventListener('auth-change', fetchAuth)
+    return () => window.removeEventListener('auth-change', fetchAuth)
   }, [])
 
   const handleLogout = async () => {

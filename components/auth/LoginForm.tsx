@@ -10,7 +10,7 @@ export default function LoginForm() {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault()
     setError('')
     setLoading(true)
@@ -21,14 +21,15 @@ export default function LoginForm() {
       body: JSON.stringify({ email, password }),
     })
 
-    const data = await res.json()
+    const data = await res.json().catch(() => ({}))
     setLoading(false)
 
     if (!res.ok) {
-      setError(data.error)
+      setError(data.error ?? 'Something went wrong')
       return
     }
 
+    window.dispatchEvent(new Event('auth-change'))
     router.push('/auth-demo')
     router.refresh()
   }
