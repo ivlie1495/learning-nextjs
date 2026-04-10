@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import NavAuthStatus from '@/components/auth/NavAuthStatus'
 
 // Server Component (default) - no "use client" needed
 // Covers: Routing & Navigation (slide 7), Server Components (slide 8)
@@ -8,9 +9,12 @@ export default function NavBar() {
       <Link href="/" className="text-xl font-bold">
         NextStore
       </Link>
-      <Link href="/" className="hover:text-gray-300 text-sm">
-        Home
-      </Link>
+      <div className="flex items-center gap-6">
+        <Link href="/" className="hover:text-gray-300 text-sm">
+          Home
+        </Link>
+        <NavAuthStatus />
+      </div>
     </nav>
   )
 }
