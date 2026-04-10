@@ -4,8 +4,8 @@ import ProductCard from '@/components/ProductCard'
 // No useState/useEffect needed — just make it async and fetch directly
 export default async function ProductList() {
   // Server-side data fetching: simply await fetch in an async component
-  const res = await fetch('https://fakestoreapi.com/products?limit=6')
-  const products = await res.json()
+  const res = await fetch('https://dummyjson.com/products?limit=6')
+  const { products } = await res.json()
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 flex-1">
