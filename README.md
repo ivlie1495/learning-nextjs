@@ -30,6 +30,7 @@ npm test
 | 7 | API Routes | `/api-demo` |
 | 8 | Authentication | `/auth-demo` |
 | 9 | Unit Testing | `/unit-testing-demo` |
+| 10 | CI/CD | `/cicd-demo` |
 
 ## Tech Stack
 

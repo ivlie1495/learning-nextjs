@@ -11,6 +11,7 @@ const lessons = [
   { href: '/api-demo', label: 'API Routes', description: 'Next.js API routes with request and response handling' },
   { href: '/auth-demo', label: 'Authentication', description: 'JWT-based auth with cookies and middleware' },
   { href: '/unit-testing-demo', label: 'Unit Testing', description: 'Writing tests with Vitest and Testing Library' },
+  { href: '/cicd-demo', label: 'CI/CD', description: 'Pipeline examples for GitHub Actions, GitLab CI, and Bitbucket' },
   { href: '/blog', label: 'Blog', description: 'Dynamic routes and static generation' },
   { href: '/dashboard', label: 'Dashboard', description: 'Protected routes and layout patterns' },
   { href: '/about', label: 'About', description: 'Static page example' },
